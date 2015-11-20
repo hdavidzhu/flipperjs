@@ -1,0 +1,23 @@
+{
+  "name": "flippers",
+  "version": "1.0.0",
+  "description": "Javascript object interter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdavidzhu/flippers.git"
+  },
+  "author": "David Zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdavidzhu/flippers/issues"
+  },
+  "homepage": "https://github.com/hdavidzhu/flippers#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.9.2"
+  }
+}
