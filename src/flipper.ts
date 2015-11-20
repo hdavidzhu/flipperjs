@@ -2,9 +2,9 @@ class _Flipper {
 
   constructor() {}
 
-  public flip(originalObj) {
-    var inversedObj = {};
-    var resultingValue;
+  public flip(originalObj : any) : any {
+    var inversedObj : any = {};
+    var resultingValue : any;
 
     // First, we want to loop through all the keys of our input object.
     Object.keys(originalObj).map(function(originalObjKey, index) {
@@ -16,7 +16,7 @@ class _Flipper {
 
         // If it is an array, let's loop through the (string) values and set them
         // as keys for the inversed Object.
-        resultingValue.map(function(result) {
+        resultingValue.map(function(result : string) {
           inversedObj[result] = originalObjKey;
         });
 

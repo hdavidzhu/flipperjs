@@ -3,7 +3,7 @@
 var gulp        = require('gulp');
 var ts          = require('gulp-typescript');
 var mocha       = require('gulp-mocha');
-var tsConfig    = require('./tsconfig.json');
+var tsConfig    = require('./tsconfig.json').compilerOptions;
 var srcGlob     = 'src/**/*.ts';
 
 
