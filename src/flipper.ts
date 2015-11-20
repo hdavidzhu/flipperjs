@@ -1,27 +1,33 @@
-function inverseObj(originalObj) {
+class _Flipper {
 
-  var inversedObj = {};
-  var resultingValue;
+  constructor() {}
 
-  // First, we want to loop through all the keys of our input object.
-  Object.keys(originalObj).map(function(originalObjKey, index) {
+  public flip(originalObj) {
+    var inversedObj = {};
+    var resultingValue;
 
-    resultingValue = originalObj[originalObjKey];
+    // First, we want to loop through all the keys of our input object.
+    Object.keys(originalObj).map(function(originalObjKey, index) {
 
-    // For the values of each key, check if it is an array.
-    if ( Object.prototype.toString.call( resultingValue ) === '[object Array]' ) {
+      resultingValue = originalObj[originalObjKey];
 
-      // If it is an array, let's loop through the (string) values and set them
-      // as keys for the inversed Object.
-      resultingValue.map(function(result) {
-        inversedObj[result] = originalObjKey;
-      });
+      // For the values of each key, check if it is an array.
+      if ( Object.prototype.toString.call( resultingValue ) === '[object Array]' ) {
 
-    // Otherwise, set it directly.
-    } else {
-      inversedObj[resultingValue] = originalObjKey;
-    }
-  });
+        // If it is an array, let's loop through the (string) values and set them
+        // as keys for the inversed Object.
+        resultingValue.map(function(result) {
+          inversedObj[result] = originalObjKey;
+        });
 
-  return inversedObj;
+      // Otherwise, set it directly.
+      } else {
+        inversedObj[resultingValue] = originalObjKey;
+      }
+    });
+
+    return inversedObj;
+  }
 }
+
+export var Flipper = new _Flipper();
