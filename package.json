@@ -18,6 +18,7 @@
   "homepage": "https://github.com/hdavidzhu/flippers#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-mocha": "^2.2.0",
     "gulp-typescript": "^2.9.2"
   }
 }
