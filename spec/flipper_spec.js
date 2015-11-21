@@ -76,4 +76,32 @@ describe("Flipper", function() {
       });
     });
   });
+  
+  describe("_setValueToKey", function() {
+    
+    var testObj;
+    
+    beforeEach(function() {
+      testObj = {
+        "stringExample": 'candy',
+        "arrayExample": ['cat', 'dog'],
+        "nullExample": undefined
+      };
+    });
+    
+    it("creates a new array and appends new value to array if key's value exists", function() {
+      Flipper._setValueToKey(testObj, 'stringExample', 'sugar');
+      expect(testObj.stringExample).to.deep.equal(['candy', 'sugar']);
+    });
+    
+    it("appends the new value to the key's array if key's value is an array", function() {
+      Flipper._setValueToKey(testObj, 'arrayExample', 'parrot');
+      expect(testObj.arrayExample).to.deep.equal(['cat', 'dog', 'parrot']);
+    });
+    
+    it("sets the value of key directly if the object key's value does not exist", function() {
+       Flipper._setValueToKey(testObj, 'nullExample', 'monkey');
+      expect(testObj.nullExample).to.equal('monkey');
+    });
+  });
 });
