@@ -5,6 +5,7 @@ var ts          = require('gulp-typescript');
 var mocha       = require('gulp-mocha');
 var tsConfig    = require('./tsconfig.json').compilerOptions;
 var srcGlob     = 'src/**/*.ts';
+var testGlob    = 'spec/**/*.js';
 
 
 
@@ -29,7 +30,7 @@ gulp.task('test', function() {
 });
 
 gulp.task('test:tdd', function() {
-  gulp.watch(srcGlob, ['test']);
+  gulp.watch([srcGlob, testGlob], ['test']);
 });
 
 
