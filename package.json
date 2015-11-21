@@ -1,21 +1,21 @@
 {
-  "name": "flippers",
+  "name": "flipperjs",
   "version": "1.0.0",
   "description": "Javascript object interter.",
-  "main": "index.js",
+  "main": "dist/flipper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hdavidzhu/flippers.git"
+    "url": "git+https://github.com/hdavidzhu/flipperjs.git"
   },
   "author": "David Zhu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hdavidzhu/flippers/issues"
+    "url": "https://github.com/hdavidzhu/flipperjs/issues"
   },
-  "homepage": "https://github.com/hdavidzhu/flippers#readme",
+  "homepage": "https://github.com/hdavidzhu/flipperjs#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "gulp": "^3.9.0",
