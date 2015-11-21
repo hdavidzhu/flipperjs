@@ -13,14 +13,23 @@ var _Flipper = (function () {
                 });
             }
             else {
-                inversedObj[resultingValue] = originalObjKey;
-                _this._setValueToKey;
+                _this._setValueToKey(inversedObj, resultingValue, originalObjKey);
             }
         });
         return inversedObj;
     };
-    _Flipper.prototype._setValuetoKey = function (inputObj, key, value) {
-        inputObj[key] = value;
+    _Flipper.prototype._setValueToKey = function (inputObj, key, value) {
+        if (inputObj[key]) {
+            if (typeof inputObj[key] === "string") {
+                inputObj[key] = [inputObj[key], value];
+            }
+            else if (Object.prototype.toString.call(inputObj[key]) === '[object Array]') {
+                inputObj[key].push(value);
+            }
+        }
+        else {
+            inputObj[key] = value;
+        }
     };
     return _Flipper;
 })();

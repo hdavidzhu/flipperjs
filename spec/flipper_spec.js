@@ -18,16 +18,16 @@ describe("Flipper", function() {
     beforeEach(function() {
       jqObject = {
         cheese: 'brie',
-        bread: 'rye',
-        jelly: 'lingenberry',
-        board: 'mahogony'
+        bread:  'rye',
+        jelly:  'lingenberry',
+        board:  'mahogony'
       }
 
       jqFlip = {
-        brie: 'cheese',
-        rye: 'bread',
-        lingenberry: 'jelly',
-        mahogony: 'board'
+        brie:         'cheese',
+        rye:          'bread',
+        lingenberry:  'jelly',
+        mahogony:     'board'
       }
     });
 
@@ -60,12 +60,19 @@ describe("Flipper", function() {
       });
 
       it('can flip a basic ojbect with a multiple-to-multiple link', function() {
-
         //Setup of our scenario.
+        jqObject.cats = ['Fluffy', 'Oscar', 'Jerry'];
+        jqObject.dogs = ['Samuel', 'Oscar', 'Fluffy', 'Fish']; 
+      
+        jqFlip.Fluffy = ['cats', 'dogs'];
+        jqFlip.Oscar  = ['cats', 'dogs'];
+        jqFlip.Jerry  = 'cats';
+        jqFlip.Samuel = 'dogs';
+        jqFlip.Fish   = 'dogs';
 
         //Running through our actual code.
-        // var result = Flipper.flip();
-        // expect(result).to.deep.equal(jqObject);
+        var result = Flipper.flip(jqObject);
+        expect(result).to.deep.equal(jqFlip);
       });
     });
   });

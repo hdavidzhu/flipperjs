@@ -22,17 +22,33 @@ class _Flipper {
 
       // Otherwise, set it directly.
       } else {
-        inversedObj[resultingValue] = originalObjKey;
-        this._setValueToKey
+        this._setValueToKey(inversedObj, resultingValue, originalObjKey);
       }
     });
 
     return inversedObj;
+  }
 
+  private _setValueToKey(inputObj : any, key : string, value : string) {
+    
+    // First, see if the value of the key has already been set.
+    if (inputObj[key]) {
+      
+      // If the value is a string, change it into an array and add the new value element.
+      if (typeof inputObj[key] === "string") {
+        inputObj[key] = [inputObj[key], value];
+      }
+      
+      // If the value is already an aray, let's just push onto it. 
+      else if (Object.prototype.toString.call( inputObj[key] ) === '[object Array]') {
+        inputObj[key].push(value);
+      }
     }
-
-  private _setValuetoKey(inputObj : any, key : string, value : string) {
-    inputObj[key] = value;
+    
+    // Otherwise, if this is a new unset value, let's just set the key to the value.
+    else {
+      inputObj[key] = value;
+    }
   }
 }
 
