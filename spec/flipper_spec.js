@@ -35,5 +35,38 @@ describe("Flipper", function() {
       var result = Flipper.flip(jqObject);
       expect(result).to.deep.equal(jqFlip);
     });
+
+    describe("when handling one/multiple matching", function() {
+
+      beforeEach(function() {
+        jqObject.kitchen = ['small', 'medium', 'large'];
+
+        jqFlip.small     = 'kitchen';
+        jqFlip.medium    = 'kitchen';
+        jqFlip.large     = 'kitchen';
+      });
+
+      it("can flip a basic object with a one-to-multiple link", function() {
+        // Running through our actual code.
+        var result = Flipper.flip(jqObject);
+        expect(result).to.deep.equal(jqFlip);
+      });
+
+      it('can flip a basic object with a multiple-to-one link', function() {
+
+        // Running through our actual code.
+        var result = Flipper.flip(jqFlip);
+        expect(result).to.deep.equal(jqObject);
+      });
+
+      it('can flip a basic ojbect with a multiple-to-multiple link', function() {
+
+        //Setup of our scenario.
+
+        //Running through our actual code.
+        // var result = Flipper.flip();
+        // expect(result).to.deep.equal(jqObject);
+      });
+    });
   });
 });
