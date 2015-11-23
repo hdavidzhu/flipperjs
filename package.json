@@ -1,6 +1,6 @@
 {
   "name": "flipperjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript object interter.",
   "main": "dist/flipper.js",
   "scripts": {
@@ -23,5 +23,9 @@
     "gulp-typescript": "^2.9.2",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
-  }
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ]
 }
